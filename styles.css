@@ -1228,8 +1228,11 @@ h3 {
   color: var(--muted);
 }
 
-.chip:hover span {
-  border-color: var(--accent-text);
+/* Solo en dispositivos con mouse: en pantallas táctiles el hover queda "pegado" tras tocar */
+@media (hover: hover) {
+  .chip:hover input:not(:checked) + span {
+    border-color: var(--accent-text);
+  }
 }
 
 .chip input:checked + span {
