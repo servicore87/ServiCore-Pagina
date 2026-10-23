@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es-AR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // Aplica el tema guardado antes de pintar la página (evita el parpadeo)
+    try {
+      const saved = localStorage.getItem("theme");
+      if (saved === "light" || saved === "dark") document.documentElement.dataset.theme = saved;
+    } catch (e) {}
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ServiCore | Soporte técnico en Buenos Aires</title>
+  <meta name="description" content="Soporte técnico en Buenos Aires: reparación de hardware, mantenimiento remoto, redes, armado de PC e instalación de software. Atención a hogares y empresas.">
+  <link rel="icon" type="image/svg+xml" href="logo-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">
+        <span class="logo__icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"><rect x="14" y="14" width="20" height="20" rx="4"/><path d="M20 8v6M28 8v6M20 34v6M28 34v6M8 20h6M8 28h6M34 20h6M34 28h6"/><circle cx="24" cy="24" r="4" fill="currentColor" stroke="none"/></svg>
+        </span>
+        <span class="logo__text">Servi<strong>Core</strong></span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="#inicio" class="nav__link">Inicio</a></li>
+          <li><a href="#servicios" class="nav__link">Servicios</a></li>
+          <li><a href="#como-trabajamos" class="nav__link">Cómo trabajamos</a></li>
+          <li><a href="#nosotros" class="nav__link">Por qué elegirnos</a></li>
+          <li><a href="#contacto" class="nav__link nav__link--cta">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar a tema día">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="badge">📍 CABA y GBA</span>
+          <h1>Soporte técnico en Buenos Aires, <span class="accent">rápido y sin vueltas</span></h1>
+          <p class="hero__text">Reparamos, armamos y mantenemos tus equipos y redes. Atención a domicilio, en oficinas y de forma remota para hogares, profesionales y pymes.</p>
+          <div class="hero__actions">
+            <a href="#contacto" class="btn btn--primary">Pedí tu presupuesto</a>
+            <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>+10</strong><span>años de experiencia</span></li>
+            <li><strong>+1.500</strong><span>equipos reparados</span></li>
+            <li><strong>24 h</strong><span>tiempo de respuesta</span></li>
+          </ul>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__card">
+            <div class="hero__card-head">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="hero__card-body">
+              <p class="mono">&gt; diagnóstico iniciado...</p>
+              <p class="mono ok">✔ Hardware: OK</p>
+              <p class="mono ok">✔ Red: conectada</p>
+              <p class="mono ok">✔ Software: actualizado</p>
+              <p class="mono warn">⚡ Rendimiento: +45%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">Servicios</span>
+          <h2>Todo lo que tu tecnología necesita</h2>
+          <p>Soluciones integrales para que tus equipos funcionen como el primer día.</p>
+        </header>
+
+        <div class="services">
+          <article class="service">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+            </div>
+            <h3>Soporte de hardware</h3>
+            <p>Diagnóstico y reparación de PC, notebooks e impresoras. Cambio de discos, memorias, fuentes, pantallas y limpieza integral.</p>
+          </article>
+
+          <article class="service">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M9 10l2 2 4-4"/></svg>
+            </div>
+            <h3>Mantenimiento remoto</h3>
+            <p>Resolvemos problemas sin que tengas que moverte. Conexión segura para optimización, limpieza de virus y configuración.</p>
+          </article>
+
+          <article class="service">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+            </div>
+            <h3>Instalación y mantenimiento de redes</h3>
+            <p>Cableado estructurado, routers, WiFi mesh, switches y servidores. Redes estables y seguras para hogares y oficinas.</p>
+          </article>
+
+          <article class="service">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M9 10h6"/><circle cx="12" cy="16" r="2"/></svg>
+            </div>
+            <h3>Armado de equipos</h3>
+            <p>PC a medida para gaming, diseño, oficina o servidores. Te asesoramos en la compra de componentes según tu presupuesto.</p>
+          </article>
+
+          <article class="service">
+            <div class="service__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            </div>
+            <h3>Instalación de software</h3>
+            <p>Sistemas operativos, paquetes de oficina, antivirus, drivers y programas específicos. Todo licenciado y configurado.</p>
+          </article>
+
+          <article class="service service--highlight">
+            <h3>¿Necesitás algo más?</h3>
+            <p>Contanos tu problema y armamos una solución a medida para tu casa o empresa.</p>
+            <a href="#contacto" class="btn btn--light">Consultanos</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO TRABAJAMOS -->
+    <section class="section section--alt" id="como-trabajamos">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__eyebrow">Proceso</span>
+          <h2>Cómo trabajamos</h2>
+          <p>Simple, claro y sin sorpresas.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__num">01</span>
+            <h3>Nos contactás</h3>
+            <p>Por WhatsApp, teléfono o el formulario. Nos contás qué está pasando.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">02</span>
+            <h3>Diagnóstico</h3>
+            <p>Evaluamos el problema de forma remota o presencial y te pasamos un presupuesto.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">03</span>
+            <h3>Solución</h3>
+            <p>Con tu aprobación, resolvemos el problema en el menor tiempo posible.</p>
+          </li>
+          <li class="step">
+            <span class="step__num">04</span>
+            <h3>Garantía</h3>
+            <p>Todos nuestros trabajos tienen garantía y seguimiento posterior.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="section" id="nosotros">
+      <div class="container why">
+        <div class="why__content">
+          <span class="section__eyebrow">Por qué elegirnos</span>
+          <h2>Técnicos de confianza, cerca tuyo</h2>
+          <p>Somos un equipo de técnicos con base en Buenos Aires. Trabajamos con hogares, profesionales independientes y pymes que necesitan que su tecnología simplemente funcione.</p>
+          <ul class="checklist">
+            <li>Atención a domicilio en CABA y GBA</li>
+            <li>Presupuesto sin cargo</li>
+            <li>Garantía escrita en todos los trabajos</li>
+            <li>Abonos mensuales para empresas</li>
+            <li>Medios de pago: efectivo, transferencia y Mercado Pago</li>
+          </ul>
+        </div>
+        <div class="testimonials">
+          <blockquote class="testimonial">
+            <p>"Me armaron la red de la oficina en un día. Desde entonces no tuvimos un solo corte."</p>
+            <cite>— Laura G., estudio contable en Palermo</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Me resolvieron el problema de la notebook de forma remota en 20 minutos. Súper recomendables."</p>
+            <cite>— Martín R., Caballito</cite>
+          </blockquote>
+          <blockquote class="testimonial">
+            <p>"Me asesoraron para armar mi PC gamer con el presupuesto que tenía. Quedó espectacular."</p>
+            <cite>— Nicolás P., San Isidro</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section section--dark" id="contacto">
+      <div class="container contact">
+        <div class="contact__info">
+          <span class="section__eyebrow">Contacto</span>
+          <h2>Contanos qué necesitás</h2>
+          <p>Respondemos en menos de 24 horas hábiles. Para urgencias, escribinos por WhatsApp.</p>
+          <ul class="contact__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:+541100000000">+54 11 0000-0000</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <a href="mailto:servicore87@gmail.com">servicore87@gmail.com</a>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>CABA y Gran Buenos Aires</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <span>Lunes a viernes de 9 a 19 h · Sábados de 9 a 13 h</span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form" id="contact-form" novalidate>
+          <!-- Configuración de FormSubmit -->
+          <input type="hidden" name="_subject" value="Nueva consulta desde la web de ServiCore">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <!-- Campo trampa anti-spam: los bots lo completan, las personas no lo ven -->
+          <input type="text" name="_honey" class="form__honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div class="form__row">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form__row">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="11 1234-5678" required>
+          </div>
+          <div class="form__row">
+            <label for="servicio">Servicio</label>
+            <select id="servicio" name="servicio" required>
+              <option value="">Elegí un servicio</option>
+              <option>Soporte de hardware</option>
+              <option>Mantenimiento remoto</option>
+              <option>Instalación y mantenimiento de redes</option>
+              <option>Armado de equipos</option>
+              <option>Instalación de software</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="form__row">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos brevemente el problema" required></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Enviar consulta</button>
+          <p class="form__status" id="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> ServiCore. Todos los derechos reservados.</p>
+      <p>Soporte técnico en Buenos Aires</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/541100000000" class="whatsapp" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35zM12.04 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.23 9.43-9.44 9.43zm8.03-17.46A11.27 11.27 0 0 0 12.04.72C5.78.72.68 5.82.68 12.08c0 2 .52 3.96 1.52 5.68L.58 23.68l6.05-1.59a11.33 11.33 0 0 0 5.41 1.38h.01c6.26 0 11.36-5.1 11.36-11.36 0-3.03-1.18-5.89-3.33-8.03z"/></svg>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
