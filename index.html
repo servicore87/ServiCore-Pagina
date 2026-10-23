@@ -336,21 +336,20 @@
               </div>
               <div class="form__row">
                 <label for="telefono">Teléfono / WhatsApp</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="11 1234-5678" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="1112345678" inputmode="numeric" pattern="[0-9]{8,15}" maxlength="15" autocomplete="tel" required>
               </div>
             </div>
-            <div class="form__row">
-              <label for="servicio">Servicio</label>
-              <select id="servicio" name="servicio" required>
-                <option value="">Elegí un servicio</option>
-                <option>Soporte de hardware</option>
-                <option>Mantenimiento remoto</option>
-                <option>Instalación y mantenimiento de redes</option>
-                <option>Armado de equipos</option>
-                <option>Instalación de software</option>
-                <option>Otro</option>
-              </select>
-            </div>
+            <fieldset class="form__row form__services" id="servicios-field">
+              <legend>Servicios <span class="form__hint">(podés elegir varios)</span></legend>
+              <div class="chips">
+                <label class="chip"><input type="checkbox" name="servicio" value="Soporte de hardware"><span>Soporte de hardware</span></label>
+                <label class="chip"><input type="checkbox" name="servicio" value="Mantenimiento remoto"><span>Mantenimiento remoto</span></label>
+                <label class="chip"><input type="checkbox" name="servicio" value="Instalación y mantenimiento de redes"><span>Redes</span></label>
+                <label class="chip"><input type="checkbox" name="servicio" value="Armado de equipos"><span>Armado de equipos</span></label>
+                <label class="chip"><input type="checkbox" name="servicio" value="Instalación de software"><span>Instalación de software</span></label>
+                <label class="chip"><input type="checkbox" name="servicio" value="Otro"><span>Otro</span></label>
+              </div>
+            </fieldset>
             <div class="form__row">
               <label for="mensaje">Mensaje</label>
               <textarea id="mensaje" name="mensaje" rows="4" placeholder="Contanos brevemente el problema" required></textarea>

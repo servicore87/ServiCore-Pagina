@@ -83,10 +83,23 @@ const FORM_ENDPOINT = "https://formsubmit.co/ajax/servicore87@gmail.com";
 const form = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
 const submitBtn = form.querySelector('button[type="submit"]');
+const phoneInput = document.getElementById("telefono");
+const servicesField = document.getElementById("servicios-field");
+const serviceChecks = servicesField.querySelectorAll('input[type="checkbox"]');
+
+// Teléfono: solo números (también limpia lo que se pega con espacios, guiones, etc.)
+phoneInput.addEventListener("input", () => {
+  phoneInput.value = phoneInput.value.replace(/\D/g, "");
+});
+
+serviceChecks.forEach((check) =>
+  check.addEventListener("change", () => servicesField.classList.remove("invalid"))
+);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   let valid = true;
+  let message = "Por favor, completá todos los campos.";
 
   form.querySelectorAll("[required]").forEach((field) => {
     const empty = !field.value.trim();
@@ -94,11 +107,26 @@ form.addEventListener("submit", async (e) => {
     if (empty) valid = false;
   });
 
+  const selectedServices = [...serviceChecks].filter((check) => check.checked).map((check) => check.value);
+  servicesField.classList.toggle("invalid", selectedServices.length === 0);
+  if (selectedServices.length === 0) valid = false;
+
+  if (valid && !/^\d{8,15}$/.test(phoneInput.value)) {
+    phoneInput.classList.add("invalid");
+    message = "Ingresá un teléfono válido (entre 8 y 15 números, sin espacios ni guiones).";
+    valid = false;
+  }
+
   if (!valid) {
-    status.textContent = "Por favor, completá todos los campos.";
+    status.textContent = message;
     status.className = "form__status error";
     return;
   }
+
+  // Los servicios elegidos viajan juntos en un solo campo del mail
+  const data = new FormData(form);
+  data.delete("servicio");
+  data.append("servicios", selectedServices.join(", "));
 
   submitBtn.disabled = true;
   submitBtn.textContent = "Enviando...";
@@ -109,7 +137,7 @@ form.addEventListener("submit", async (e) => {
     const response = await fetch(FORM_ENDPOINT, {
       method: "POST",
       headers: { Accept: "application/json" },
-      body: new FormData(form),
+      body: data,
     });
     const result = await response.json();
     if (!response.ok || result.success === "false" || result.success === false) {
@@ -120,7 +148,9 @@ form.addEventListener("submit", async (e) => {
     status.className = "form__status success";
     form.reset();
   } catch (err) {
-    status.textContent = "No pudimos enviar la consulta. Probá de nuevo o escribinos a servicore87@gmail.com.";
+    // El motivo real (formulario sin activar, página abierta como archivo, etc.) queda en la consola
+    console.error("FormSubmit:", err.message);
+    status.textContent = "No pudimos enviar la consulta. Probá de nuevo o hacé click en el mail que figura al lado del formulario para escribirnos directamente.";
     status.className = "form__status error";
   } finally {
     submitBtn.disabled = false;
