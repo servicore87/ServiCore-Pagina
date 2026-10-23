@@ -120,7 +120,7 @@ form.addEventListener("submit", async (e) => {
     status.className = "form__status success";
     form.reset();
   } catch (err) {
-    status.textContent = "No pudimos enviar la consulta. Probá de nuevo o escribinos por WhatsApp.";
+    status.textContent = "No pudimos enviar la consulta. Probá de nuevo o escribinos a servicore87@gmail.com.";
     status.className = "form__status error";
   } finally {
     submitBtn.disabled = false;

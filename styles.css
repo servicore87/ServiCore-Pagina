@@ -1200,32 +1200,6 @@ h3 {
   color: var(--muted);
 }
 
-/* ============ WhatsApp flotante ============ */
-.whatsapp {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  width: 56px;
-  height: 56px;
-  border-radius: 16px;
-  background: #25d366;
-  color: var(--white);
-  display: grid;
-  place-items: center;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
-  z-index: 90;
-  transition: transform var(--transition);
-}
-
-.whatsapp:hover {
-  transform: translateY(-3px);
-}
-
-.whatsapp svg {
-  width: 28px;
-  height: 28px;
-}
-
 /* ============ Animaciones al scroll ============ */
 .reveal {
   opacity: 0;
@@ -1486,10 +1460,5 @@ h3 {
   .contact__info,
   .form {
     padding: 28px 22px;
-  }
-
-  .whatsapp {
-    right: 16px;
-    bottom: 16px;
   }
 }
